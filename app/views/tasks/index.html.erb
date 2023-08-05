@@ -1,0 +1,23 @@
+<!-- app/views/tasks/index.html.erb -->
+<div class="container mt-5">
+  <h1 class="mb-4">Tasks List</h1>
+
+  <div class="row">
+    <% @tasks.each do |task| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= task.title %></h5>
+            <p class="card-text"><%= task.details %></p>
+            <% if task.completed %>
+              <p class="text-success">Status: Completed</p>
+            <% else %>
+              <p class="text-danger">Status: Incomplete</p>
+            <% end %>
+            <%= link_to 'View Details', task_path(task), class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

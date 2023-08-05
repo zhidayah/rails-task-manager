@@ -1,0 +1,11 @@
+<!-- app/views/tasks/show.html.erb -->
+<div class="container mt-5">
+  <h1><%= @task.title %></h1>
+  <p class="lead"><%= @task.details %></p>
+  <% if @task.completed %>
+    <p class="text-success">Status: Completed</p>
+  <% else %>
+    <p class="text-danger">Status: Incomplete</p>
+  <% end %>
+  <%= link_to 'Back to Tasks', tasks_path, class: 'btn btn-secondary' %>
+</div>
